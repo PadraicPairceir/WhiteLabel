@@ -1,4 +1,4 @@
-package com.mkyong;
+package com.blacktree;
 
 import java.util.Map;
 
@@ -19,4 +19,9 @@ public class WelcomeController {
 		return "welcome";
 	}
 
+	// test 5xx errors
+	@RequestMapping("/5xx")
+	public String ServiceUnavailable() {
+		throw new RuntimeException("ABC");
+	}
 }
